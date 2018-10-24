@@ -34,5 +34,5 @@ int main(int argc, char **argv)
     }
 
     printf("[%05d] Done.\n", getpid());
-    return (EXIT_FAILURE);
+    return (EXIT_SUCCESS);
 }
