@@ -11,6 +11,7 @@ URL: https://github.com/naughtont3/myhello
 BUILD
 -----
 
+```
      # 1) Generate configure script
     $ ./autogen.sh
 
@@ -24,21 +25,27 @@ BUILD
      # 2b) Configure (with CUSTOM install path), build and install
     $ ./configure --prefix=$PWD/mylocal && make && make install
 
+```
 
 RUN
 ---
 
-    $ ./mylocal/bin/myhello 
+```
+    $ ./mylocal/bin/myhello
     Hello World
     This is myhello 1.0.0-rUnversioned directory.
 
 
-    $ ./mylocal/bin/simple_pthread 
+    $ ./mylocal/bin/simple_pthread
     [29371] mytid is 140735284126464
     [29371] Hello from main():line 28
     [29371] hello-from-foo
     [29371] mytid is 4499353600
     [29371] Done.
+```
+
+
+ * NOTE: Can also run `make check`.
 
 
 CLEAN
