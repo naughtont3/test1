@@ -22,6 +22,9 @@ int main (int argc, char **argv)
     printf("Hello World\n");
     printf("This is %s.\n", PACKAGE_STRING);
 
+    /* Intentionally add bad printf() call for CI testing... */
+    foobar_printf("This will fail to compile!\n");
+
     return (EXIT_SUCCESS);
 }
 
