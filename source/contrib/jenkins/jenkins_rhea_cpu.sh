@@ -16,8 +16,8 @@ cat > $BUILD_TAG.pbs << EOF
 # Arg1 retval
 # Arg2 err-string
 die () {
-    echo "ERROR: $2"
-    exit $1
+    echo "ERROR: \$2"
+    exit \$1
 }
 
 
