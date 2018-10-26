@@ -56,6 +56,12 @@ date
 echo "# INFO: PWD (START)"
 pwd
 
+
+echo "# INFO: SOURCE VERSION"
+git log --oneline | head -2
+git branch -vv
+
+
 echo ""
 echo ""
 echo "starting new test"
