@@ -114,6 +114,12 @@ cp $BUILD_DIR/$BUILD_TAG.o* ../
 
 cp $BUILD_DIR/$BUILD_TAG.o* ../
 
+echo "================================================="
+echo "#  LOG: $BUILD_TAG.o*"
+echo "================================================="
+cat ../$BUILD_TAG.o*
+echo "================================================="
+
 # explicitly check for correct test output from all builds
 #[ $(grep '100% tests passed, 0 tests failed out of [0-9]*' ../$BUILD_TAG.o* | wc -l) -eq 4 ]
 
