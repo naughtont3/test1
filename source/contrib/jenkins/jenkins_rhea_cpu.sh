@@ -99,7 +99,7 @@ echo "================================================="
 exit 0
 EOF
 
-/home/csc040ci_auser/blocking_qsub $BUILD_DIR $BUILD_TAG.pbs
+/ccs/home/csc040ci_auser/openshift-ci/blocking_qsub $BUILD_DIR $BUILD_TAG.pbs
 job_rc=$?
 
 echo "================================================="
