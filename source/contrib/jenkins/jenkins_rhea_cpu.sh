@@ -12,6 +12,15 @@ cat > $BUILD_TAG.pbs << EOF
 #PBS -d $BUILD_DIR
 #PBS -l partition=rhea
 
+
+# Arg1 retval
+# Arg2 err-string
+die () {
+    echo "ERROR: $2"
+    exit $1
+}
+
+
 echo "================================================="
 echo -n "   Started test at: "
 date
@@ -61,28 +70,16 @@ pwd
 rc=0
 
 echo "# DBG: Run autogen.sh"
-./autogen.sh
-rc=$?
-if [ 0 -ne $rc ] ; then
-  echo "autogen.sh failed. exiting."
-  exit 1
-fi
+./autogen.sh \
+    || die 1 "ERROR: autogen.sh failed. exiting."
 
 echo "# DBG: Run configure"
-./configure
-rc=$?
-if [ 0 -ne $rc ] ; then
-  echo "configure failed. exiting."
-  exit 2
-fi
+./configure \
+    || die 2 "ERROR: configure failed. exiting."
 
 echo "# DBG: Run make"
-make
-rc=$?
-if [ 0 -ne $rc ] ; then
-  echo "make failed. exiting."
-  exit 3
-fi
+make \
+    || die 3 "ERROR: make failed. exiting."
 
 # TODO: Add make install
 # TODO: Add make check
