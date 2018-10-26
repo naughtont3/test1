@@ -17,7 +17,7 @@ int main(int argc, char **argv)
     int rc;
     pthread_t thread;
 
-    rc = pthread_create (&thread, NULL,  foo_fn, "hello-from-foo");
+    rc = BORKED_HERE_pthread_create (&thread, NULL,  foo_fn, "hello-from-foo");
     if (0 != rc) {
         fprintf (stderr, "Error: pthread_create() failed\n");
     }
