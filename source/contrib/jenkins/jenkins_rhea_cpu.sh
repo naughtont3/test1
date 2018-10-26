@@ -4,6 +4,7 @@ BUILD_DIR=$(pwd)
 echo $BUILD_DIR
 
 cat > $BUILD_TAG.pbs << EOF
+#!/bin/bash
 #PBS -A CSC040
 #PBS -N $BUILD_TAG
 #PBS -j oe
