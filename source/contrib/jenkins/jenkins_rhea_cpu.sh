@@ -54,16 +54,13 @@ echo ""
 
 cd source/
 
-mkdir -p build
-cd build
-
 echo "# DBG: PWD (BUILD)"
 pwd
 
 rc=0
 
 echo "# DBG: Run autogen.sh"
-../autogen.sh
+./autogen.sh
 rc=$?
 if [ 0 -ne $rc ] ; then
   echo "autogen.sh failed. exiting."
